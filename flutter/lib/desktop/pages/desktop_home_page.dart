@@ -269,7 +269,9 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         ));
   }
 
-  buildPasswordBoard2(BuildContext context, ServerModel model) {
+   buildPasswordBoard2(BuildContext context, ServerModel model) {
+        return Container();
+      } {
     RxBool refreshHover = false.obs;
     RxBool editHover = false.obs;
     final textColor = Theme.of(context).textTheme.titleLarge?.color;
