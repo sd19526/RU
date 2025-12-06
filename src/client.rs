@@ -201,6 +201,8 @@ impl Client {
         ),
         (i32, String),
     )> {
+        log::info!("【安全限制】此客户端仅限被控端，已阻止向 ID: {} 发起连接", peer);
+        return Err(anyhow::anyhow!("此版本已禁用主动发起连接功能").into());
         debug_assert!(peer == interface.get_id());
         interface.update_direct(None);
         interface.update_received(false);
